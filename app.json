@@ -1,7 +1,7 @@
 {
-    "name": "PDF Transcription",
-    "short_name": "pdftranscribe",
+    "name": "Anuvad",
+    "short_name": "Anuvad",
     "thumbnail": "http://i.imgur.com/jUvQBm3.png",
-    "description": "Help us to transcribe a PDF file",
-    "question": "Transcribe the following page"
+    "description": "Help us to transcribe a clip",
+    "question": "Transcribe the following clip"
 }
