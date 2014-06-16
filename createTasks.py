@@ -119,13 +119,13 @@ if __name__ == "__main__":
     else:
         pbclient.set('api_key', options.api_key)
 
-    if not options.pdf_url:
-        options.pdf_url = 'http://cdn.mozilla.net/pdfjs/tracemonkey.pdf'
-        print("Using default PDF file from Mozilla")
+    if not options.video_url:
+        options.video_url = 'https://www.youtube.com/watch?v=YO2T7alfZz4'
+        print("Using default video file")
 
-    if not options.pdf_pages:
-        options.pdf_pages = 14
-        print ("Using the number of pages of the default PDF file from Mozilla")
+    if not options.video_entries:
+        options.video_entries = 15
+        print ("Using the number of entries of the default video file")
 
     if (options.verbose):
         print('Running against PyBosssa instance at: %s' % options.api_url)
