@@ -10,7 +10,7 @@ By using YouTube IFrame API, we have the possibility of rendering almost any Vid
 [Youtube server](https://www.youtube.com) 
 and then use a customized form to get the data that we want to extract from it .
 
-In this **simple demo application**, we **load a Video file** in one side of the page, and in the other one **a form** where the volunteer will be able to transcribe the Video by typing the text in the input form. While this example is really simple, adapting the template to add the [Amara widgetizer script]() will allow transcribing, syncing and getting user list for easy email of video clips.
+In this **simple demo application**, we **load a Video clip file** in one side of the page, and in the other one **a form** where the volunteer will be able to transcribe the Video by typing the text in the input form. While this example is really simple, adapting the template to add the [Amara widgetizer script]() will allow transcribing, syncing and getting user list for easy email of video clips.
 
 ![alt screenshot](http://img10.imageshack.us/img10/5364/pdftranscribe1.png)
 
