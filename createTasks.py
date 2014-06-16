@@ -56,17 +56,23 @@ if __name__ == "__main__":
                       dest="create_app",
                       help="Create the application",
                       metavar="CREATE-APP")
-    # PDF file URL
-    parser.add_option("-f", "--file-pdf",
-                      dest="pdf_url",
-                      help="PDF File URL",
-                      metavar="PDF-FILE-URL")
+    # Video file URL
+    parser.add_option("-f", "--file-video",
+                      dest="video_url",
+                      help="Video File URL",
+                      metavar="VIDEO-FILE-URL")
 
-    # PDF file pages
-    parser.add_option("-p", "--pages-pdf",
-                      dest="pdf_pages",
-                      help="PDF File Pages",
-                      metavar="PDF-FILE-PAGES")
+    # Video file start
+    parser.add_option("-s", "--start-video",
+                      dest="video_start",
+                      help="Video File Start",
+                      metavar="VIDEO-FILE-START")
+
+    # Video file end
+    parser.add_option("-e", "--end-video",
+                      dest="video_end",
+                      help="Video File Ends",
+                      metavar="VIDEO-FILE-END")
 
     # Update template for tasks and long_description for app
     parser.add_option("-u", "--update-template", action="store_true",
@@ -146,11 +152,12 @@ if __name__ == "__main__":
         try:
             response = pbclient.update_app(app)
             check_api_error(response)
-            for page in range(1, 15):
+            for row in range(1, 15):
                 # Data for the tasks
                 task_info = dict(question=app_config['question'],
-                                 page=page,
-                                 pdf_url=options.pdf_url)
+                                 start=options.video_start,
+                                 end=options.video_end,
+                                 video_url=options.video_url)
                 response = pbclient.create_task(app.id, task_info)
                 check_api_error(response)
         except:
@@ -162,11 +169,12 @@ if __name__ == "__main__":
                 response = pbclient.find_app(short_name=app_config['short_name'])
                 check_api_error(response)
                 app = response[0]
-                for page in range(1, options.pdf_pages + 1):
+                for entry in range(1, options.video_entries + 1):
                     # Data for the tasks
-                    task_info = dict(question="Transcribe the following page",
-                                     page=page,
-                                     pdf_url=options.pdf_url)
+                    task_info = dict(question="Transcribe the following video",
+                                     start=video_start,
+                                     end=video_end,
+                                     video_url=options.video_url)
                     response = pbclient.create_task(app.id, task_info)
                     check_api_error(response)
             except:
