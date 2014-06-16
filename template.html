@@ -76,7 +76,7 @@ pybossa.taskLoaded(function(task, deferred) {
 pybossa.presentTask(function(task, deferred) {
     if ( !$.isEmptyObject(task) ) {
         loadUserProgress();
-        #$('#video-clip').html('').append(task.info.oembed);
+        //$('#video-clip').html('').append(task.info.oembed);
         $('#video-clip').html('').append(task.info.video_url);        
         $('#task-id').html(task.id);
 
