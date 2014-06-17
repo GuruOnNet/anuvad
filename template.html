@@ -10,7 +10,7 @@
         <strong>The task has been completed!</strong> Thanks a lot!</strong>
 </div>
     <div id="loading" class="alert alert-info">
-        <strong>Loading the PDF file...</strong>
+        <strong>Loading the Video clip file...</strong>
 </div>
 
 <div id="finish" class="alert alert-success" style="display:none;">
@@ -147,10 +147,6 @@ pybossa.presentTask(function(task, deferred) {
                     deferred.resolve();
                 });
                 $("#loading").fadeIn(500);
-                if ($("#disqus_thread").is(":visible")) {
-                    $('#disqus_thread').toggle();
-                    $('.btn-disqus').toggle();
-                }
             }
             else {
                 $("#error").show();
